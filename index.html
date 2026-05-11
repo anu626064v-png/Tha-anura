@@ -468,7 +468,7 @@ input:focus,select:focus,textarea:focus { border-color:var(--primary); backgroun
         if(qty<0.25){ alert('Minimum 0.25 kg'); return; }
         let total=pendingSweet.price*qty;
         let time=new Date().toLocaleString('en-IN');
-        let msg=`🍬 *NAYA ORDER — Nema Sweets* 🍬\n━━━━━━━━━━━━━━━━━\n👤 Naam: ${currentUser.name}\n📞 Phone: ${currentUser.phone}\n📍 Pata: ${currentUser.address}\n${currentUser.email?`📧 Email: ${currentUser.email}\n`:''}━━━━━━━━━━━━━━━━━\n🛒 Mithai: ${pendingSweet.name}\n⚖️ Qty: ${qty} kg\n💰 Total: Rs. ${total}\n⏰ Time: ${time}\n━━━━━━━━━━━━━━━━━\n📌 Nema Sweets, Surkhi, MP`;
+        let msg=`🍬 *New ORDER — Nema Sweets* 🍬\n━━━━━━━━━━━━━━━━━\n👤 Naam: ${currentUser.name}\n📞 Phone: ${currentUser.phone}\n📍 Pata: ${currentUser.address}\n${currentUser.email?`📧 Email: ${currentUser.email}\n`:''}━━━━━━━━━━━━━━━━━\n🛒 Mithai: ${pendingSweet.name}\n⚖️ Qty: ${qty} kg\n💰 Total: Rs. ${total}\n⏰ Time: ${time}\n━━━━━━━━━━━━━━━━━\n📌 Nema Sweets, Surkhi, MP`;
         closeModal('orderModal');
         let numbers=ownerNumbers.length?ownerNumbers:[{phone:'919301579370'}];
         numbers.forEach((num,idx)=>setTimeout(()=>window.open(`https://wa.me/${num.phone}?text=${encodeURIComponent(msg)}`,'_blank'),idx*800));
